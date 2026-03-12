@@ -1,0 +1,23 @@
+{
+  "name": "@mcpaas/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:migrate": "tsx src/migrate.ts",
+    "db:seed": "tsx src/seed.ts",
+    "db:migrate-mongo": "tsx src/migrate-mongo.ts",
+    "build": "echo 'no build needed'"
+  },
+  "dependencies": {
+    "@mcpaas/kernel-types": "workspace:*",
+    "@supabase/supabase-js": "^2.49.0",
+    "dotenv": "^16.4.0",
+    "mongodb": "^7.1.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "tsx": "^4.19.0",
+    "typescript": "5.9.2"
+  }
+}

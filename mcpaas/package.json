@@ -1,0 +1,27 @@
+{
+  "name": "mcpaas",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:server": "turbo run dev --filter=@mcpaas/mcp-server",
+    "dev:dashboard": "turbo run dev --filter=@mcpaas/dashboard",
+    "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
+    "db:migrate": "turbo run db:migrate --filter=@mcpaas/db",
+    "db:seed": "turbo run db:seed --filter=@mcpaas/db",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "turbo": "^2.7.1",
+    "typescript": "5.9.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@types/node": "^25.4.0"
+  }
+}

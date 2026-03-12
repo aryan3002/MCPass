@@ -1,0 +1,39 @@
+# flyctl launch added from mcpaas/.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+mcpaas/**/node_modules
+mcpaas/**/.pnp
+mcpaas/**/.pnp.js
+
+# Local env files
+mcpaas/**/.env
+mcpaas/**/.env.local
+mcpaas/**/.env.development.local
+mcpaas/**/.env.test.local
+mcpaas/**/.env.production.local
+
+# Testing
+mcpaas/**/coverage
+
+# Turbo
+mcpaas/**/.turbo
+
+# Vercel
+mcpaas/**/.vercel
+
+# Build Outputs
+mcpaas/**/.next
+mcpaas/**/out
+mcpaas/**/build
+
+
+# Debug
+mcpaas/**/npm-debug.log*
+mcpaas/**/yarn-debug.log*
+mcpaas/**/yarn-error.log*
+
+# Misc
+mcpaas/**/.DS_Store
+mcpaas/**/*.pem
+fly.toml

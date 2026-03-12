@@ -1,0 +1,20 @@
+{
+  "name": "@mcpaas/kernel-telemetry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mcpaas/kernel-types": "workspace:*",
+    "@supabase/supabase-js": "^2.49.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "5.9.2"
+  }
+}

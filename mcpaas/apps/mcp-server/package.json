@@ -1,0 +1,32 @@
+{
+  "name": "@mcpaas/mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "hono": "^4.7.0",
+    "@hono/node-server": "^1.14.0",
+    "@mcpaas/kernel-types": "workspace:*",
+    "@mcpaas/kernel-runtime": "workspace:*",
+    "@mcpaas/kernel-auth": "workspace:*",
+    "@mcpaas/kernel-telemetry": "workspace:*",
+    "@mcpaas/kernel-datastore": "workspace:*",
+    "@mcpaas/kernel-connectors": "workspace:*",
+    "@mcpaas/kernel-registry": "workspace:*",
+    "@mcpaas/tools-cribliv": "workspace:*",
+    "zod": "^3.24.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "tsx": "^4.19.0",
+    "typescript": "5.9.2"
+  }
+}
