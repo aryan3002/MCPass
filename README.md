@@ -71,7 +71,7 @@ MCPaaS is the answer for the long tail. Enterprise merchants will build their ow
 
 ## Companion Project
 
-**Tokento** — Loyalty infrastructure layer for AI shopping agents (working with PayPal's Agentic Commerce team). MCPaaS handles agent discovery and tool execution; Tokento handles the reward layer at agentic checkout. Together they cover both halves of the agentic-commerce stack.
+**Tokento** — Loyalty infrastructure layer for AI shopping agents (companion project). MCPaaS handles agent discovery and tool execution; Tokento handles the reward layer at agentic checkout. Together they cover both halves of the agentic-commerce stack.
 
 ---
 

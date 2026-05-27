@@ -177,7 +177,7 @@ MCPaaS is the answer for the long tail. Big merchants will build their own MCP s
 
 ## Related Work
 
-- **Tokento** — Loyalty layer for AI shopping agents (companion project, working with PayPal's Agentic Commerce team)
+- **Tokento** — Loyalty layer for AI shopping agents (companion project)
 - **AgentPort** — The marketing/demo site for MCPaaS
 
 ---
