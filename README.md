@@ -4,13 +4,15 @@
 
 [![Built on MCP](https://img.shields.io/badge/Built%20on-Anthropic's%20MCP-blueviolet)](https://modelcontextprotocol.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)](https://www.typescriptlang.org/)
-[![Deployed on Fly.io](https://img.shields.io/badge/Deployed-Fly.io-purple)](https://fly.io/)
+[![Status](https://img.shields.io/badge/status-MVP%20(not%20deployed%20publicly)-orange)]()
+
+> **Status:** the MVP is feature-complete and runs locally (see the quickstart). It is not deployed publicly yet, so there is no hosted endpoint to try. The Dockerfile and Fly.io config are in the repo for when it goes live.
 
 ---
 
 ## What is this?
 
-MCPaaS is a **multi-tenant, cloud-hosted MCP server platform**. A merchant signs up, plugs in a connector (Shopify, custom feed, etc.), and within a minute their business is queryable by every AI agent that speaks [Anthropic's Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) — Claude, ChatGPT, Gemini, Cursor, and 200+ tools.
+MCPaaS is a **multi-tenant MCP server platform** built to be hosted. The idea: a merchant signs up, plugs in a connector (Shopify, custom feed, etc.), and their business becomes queryable by every AI agent that speaks [Anthropic's Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) — Claude, ChatGPT, Gemini, Cursor, and 200+ tools.
 
 ```
 ┌──────────────┐      MCP Protocol      ┌────────────────┐      Connector      ┌──────────────┐
@@ -26,11 +28,11 @@ MCPaaS is a **multi-tenant, cloud-hosted MCP server platform**. A merchant signs
 ## Highlights
 
 - 🚀 **One-click MCP endpoint** for every tenant
-- 🔌 **Pluggable connectors** — Shopify, Feed, CribLiv shipped; framework for any backend
+- 🔌 **Pluggable connectors** — Shopify, Feed and CribLiv connectors built; framework for any backend
 - 🤖 **Agent platform detection** — different routes for ChatGPT vs Claude vs Gemini vs browser
 - 🛡 **Policy + telemetry pipeline** wrapping every tool call
 - 🔐 **Multi-tenant** isolation at data, auth, and registry layers
-- ⚡ **Production-deployed** on Fly.io via Docker
+- 📦 **Deploy-ready**: Dockerfile and Fly.io config included (not deployed publicly yet)
 
 ---
 
@@ -42,14 +44,14 @@ The full monorepo lives in [`mcpaas/`](./mcpaas) — see [`mcpaas/README.md`](./
 MCPass/
 ├── mcpaas/         ← Full pnpm + Turbo monorepo (apps + kernel packages)
 │   ├── apps/
-│   │   ├── mcp-server/    ← The live MCP server
+│   │   ├── mcp-server/    ← The MCP server
 │   │   └── dashboard/     ← Merchant-facing Next.js UI
 │   └── packages/
 │       ├── kernel-types, kernel-auth, kernel-datastore,
 │       │ kernel-runtime, kernel-policy, kernel-registry,
 │       │ kernel-connectors, kernel-telemetry, ...
 │       └── ...
-├── Dockerfile      ← Production image
+├── Dockerfile      ← Container image
 └── fly.toml        ← Fly.io deployment config (sjc region)
 ```
 

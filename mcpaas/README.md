@@ -4,8 +4,9 @@
 
 [![Built on MCP](https://img.shields.io/badge/Built%20on-Anthropic's%20MCP-blueviolet)](https://modelcontextprotocol.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)](https://www.typescriptlang.org/)
-[![Deployed on Fly.io](https://img.shields.io/badge/Deployed-Fly.io-purple)](https://fly.io/)
-[![Status](https://img.shields.io/badge/status-active-success)]()
+[![Status](https://img.shields.io/badge/status-MVP%20(not%20deployed%20publicly)-orange)]()
+
+> **Status:** the MVP is feature-complete and runs locally (see the quickstart). It is not deployed publicly yet, so there is no hosted endpoint to try. The Dockerfile and Fly.io config are in the repo for when it goes live.
 
 ---
 
@@ -26,7 +27,7 @@ Most teams don't have the bandwidth. **That's the gap MCPaaS fills.**
 
 ## What It Does
 
-MCPaaS is a multi-tenant, cloud-hosted MCP server platform. You plug in a connector (Shopify, custom feed, CribLiv, anything), get a live MCP endpoint, and any agent that speaks MCP can now query your business.
+MCPaaS is a multi-tenant MCP server platform built to be hosted. You plug in a connector (Shopify, custom feed, CribLiv, anything), get an MCP endpoint, and any agent that speaks MCP can now query your business.
 
 ```
 ┌──────────────┐      MCP Protocol      ┌────────────────┐      Connector      ┌──────────────┐
@@ -37,7 +38,7 @@ MCPaaS is a multi-tenant, cloud-hosted MCP server platform. You plug in a connec
 └──────────────┘                        └────────────────┘                     └──────────────┘
 ```
 
-**Outcome:** A merchant signs up, drops in a Shopify API key, and within a minute their product catalog is queryable by every AI agent on the open web.
+**The goal:** a merchant signs up, drops in a Shopify API key, and their product catalog becomes queryable by any AI agent that speaks MCP.
 
 ---
 
@@ -45,12 +46,12 @@ MCPaaS is a multi-tenant, cloud-hosted MCP server platform. You plug in a connec
 
 | Feature | What it gives you |
 |---|---|
-| **One-click MCP endpoint** | Tenants get a hosted MCP URL the moment they sign up |
+| **One-click MCP endpoint** | Each tenant gets its own MCP URL when it signs up |
 | **Pluggable connectors** | Shopify, Feed, CribLiv — drop in new ones via the kernel-connectors interface |
 | **Dynamic tool generation** | Tools auto-generated from connector capabilities, no hand-writing schemas |
 | **Agent platform detection** | Routes requests differently for ChatGPT vs Claude vs Gemini vs browser |
 | **Policy + telemetry pipeline** | Every tool call wrapped in an executor — policies enforce limits, telemetry logs the call |
-| **Session lifecycle management** | 30-min TTL with periodic cleanup — no memory leaks under sustained load |
+| **Session lifecycle management** | 30-min TTL with periodic cleanup so idle sessions don't pile up |
 | **Multi-tenant by design** | Tenant isolation at the data, auth, and tool registry layers |
 | **API key auth + rotation** | Two-step regeneration flow with reveal-once UX |
 
@@ -61,7 +62,7 @@ MCPaaS is a multi-tenant, cloud-hosted MCP server platform. You plug in a connec
 ```
 mcpaas/
 ├── apps/
-│   ├── mcp-server/        ← The live MCP server (Fly.io-deployed)
+│   ├── mcp-server/        ← The MCP server
 │   └── dashboard/         ← Merchant-facing Next.js UI for connector setup, key mgmt
 └── packages/
     ├── kernel-types/      ← Shared TypeScript contracts
@@ -139,7 +140,9 @@ Point any MCP-compatible agent (Claude Desktop, Cursor, etc.) at the MCP URL.
 
 ---
 
-## Production Deployment
+## Deploying (not live yet)
+
+The MVP has not been deployed publicly. When it is, this is the path:
 
 ```bash
 # Build & deploy to Fly.io
